@@ -16,6 +16,10 @@ This repository contains reproducible security-lab projects, small defensive too
 
 Burp Suite · Nmap · Nessus · Splunk · Wireshark · Kali Linux · Docker · OWASP crAPI · DVWA · Python · SQL
 
+## Live portfolio website
+
+[Open the deployed portfolio]( https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/ )
+
 ## Repository map
 
 - projects/crapi-api-security/ — API response exposure assessment and auditor.

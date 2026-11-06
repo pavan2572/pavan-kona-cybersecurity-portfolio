@@ -4,7 +4,7 @@ Explore the three practical project packages. Each has a dedicated portfolio pag
 
 ## 01 — API Security: OWASP crAPI & Response Exposure Auditor
 
-**[Open project page](api-security.html)**
+**[Open project page](https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/projects/api-security.html)**
 
 - [Technical guide](crapi-api-security/README.md)
 - [Python response auditor](crapi-api-security/scripts/api_response_auditor.py)
@@ -21,7 +21,7 @@ The example deliberately includes unexpected and sensitive-name fields. A non-ze
 
 ## 02 — Vulnerability Management Pipeline
 
-**[Open project page](vulnerability-management.html)**
+**[Open project page](https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/projects/vulnerability-management.html)**
 
 - [Technical guide](vulnerability-management/README.md)
 - [Local-only Docker target](vulnerability-management/docker-compose.yml)
@@ -37,7 +37,7 @@ The vulnerable target is bound to 127.0.0.1:3000. Run the included Nmap wrappers
 
 ## 03 — Threat Intelligence & Detection Engineering
 
-**[Open project page](threat-intelligence.html)**
+**[Open project page](https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/projects/threat-intelligence.html)**
 
 - [Technical guide](threat-intelligence/README.md)
 - [IOC triage utility](threat-intelligence/scripts/ioc_triage.py)

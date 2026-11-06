@@ -28,6 +28,7 @@ The example deliberately includes unexpected and sensitive-name fields. A non-ze
 - [Linux/macOS scan wrapper](vulnerability-management/scripts/scan-local.sh)
 - [Windows PowerShell scan wrapper](vulnerability-management/scripts/scan-local.ps1)
 - [Nmap XML parser](vulnerability-management/scripts/parse_nmap.py)
+- [Nessus CSV normalizer](vulnerability-management/scripts/parse_nessus.py)
 - [Risk register utility](vulnerability-management/scripts/risk_register.py)
 - [Synthetic Nmap XML](vulnerability-management/data/nmap.synthetic.xml)
 - [Synthetic findings CSV](vulnerability-management/data/findings.synthetic.csv)

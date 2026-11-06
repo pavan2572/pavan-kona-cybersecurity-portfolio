@@ -1,0 +1,5 @@
+timestamp,src_ip,dest_domain,dest_port,user_agent,uri_path,status
+2026-11-01T11:00:01Z,192.0.2.44,example.com,8080,python-requests/2.31,/api/check,200
+2026-11-01T11:00:05Z,192.0.2.44,example.com,8080,python-requests/2.31,/api/status,200
+2026-11-01T11:00:09Z,192.0.2.44,example.com,8080,python-requests/2.31,/api/health,200
+2026-11-01T11:00:14Z,192.0.2.44,example.com,8080,python-requests/2.31,/api/check,200

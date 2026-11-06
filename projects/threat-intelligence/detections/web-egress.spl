@@ -1,0 +1,18 @@
+index=main sourcetype=portfolio:proxy
+| eval event_time=strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+| eval port=tonumber(dest_port)
+| eval script_agent=if(match(lower(user_agent), "curl|wget|python-requests|powershell"), 1, 0)
+| where isnotnull(event_time)
+| stats count AS request_count dc(uri_path) AS unique_paths max(script_agent) AS script_agent
+        values(user_agent) AS user_agents values(status) AS http_statuses
+        by src_ip dest_domain port
+| where (script_agent=1 AND request_count >= 3)
+    OR (port!=80 AND port!=443 AND request_count >= 3)
+| sort - request_count
+
+/* Analyst notes:
+   - Script-oriented user agents and non-standard ports are weak signals alone.
+   - Validate process identity, destination ownership, DNS, TLS, URI pattern,
+     proxy policy and business context before escalating.
+   ATT&CK hypothesis: T1071.001 Web Protocols.
+*/

@@ -1,0 +1,4 @@
+# Endpoint-specific fields expected by this synthetic profile-card example
+user.id
+user.display_name
+account.tier

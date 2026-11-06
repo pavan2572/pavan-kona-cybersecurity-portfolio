@@ -1,0 +1,15 @@
+index=main sourcetype=portfolio:auth
+| eval event_time=strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+| where event_id="4625" AND isnotnull(event_time)
+| bin event_time span=10m
+| stats count AS failed_attempts dc(user) AS distinct_accounts values(user) AS attempted_accounts by event_time src_ip host
+| where failed_attempts >= 5 OR distinct_accounts >= 5
+| sort - failed_attempts
+
+/* Analyst notes:
+   - Demonstration threshold only; tune to environment baseline.
+   - Correlate with event_id=4624 success events, identity-provider data,
+     VPN/proxy attribution, known scanners and account lockout telemetry.
+   - A source IP can represent NAT/shared infrastructure.
+   ATT&CK hypothesis: T1110.001 Password Guessing / T1110.003 Password Spraying.
+*/

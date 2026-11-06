@@ -1,0 +1,11 @@
+{
+  "user": {
+    "id": "demo-user-001",
+    "display_name": "Sample User",
+    "email": "sample@example.com",
+    "access_token": "DEMO-ONLY-NOT-A-REAL-CREDENTIAL"
+  },
+  "account": {
+    "tier": "basic"
+  }
+}

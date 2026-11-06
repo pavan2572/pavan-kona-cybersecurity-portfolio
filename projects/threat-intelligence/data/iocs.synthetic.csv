@@ -1,0 +1,5 @@
+indicator,indicator_type,source,first_seen,confidence,context
+192.0.2.44,ip,Synthetic training record,2026-11-01,95,TEST-NET documentation address only
+198.51.100.18,ip,Synthetic training record,2026-11-01,80,TEST-NET documentation address only
+demo.example.com,domain,Synthetic training record,2026-11-01,70,Reserved example domain only
+test.invalid,domain,Synthetic training record,2026-11-01,40,Reserved invalid TLD demonstration

@@ -18,7 +18,7 @@ Burp Suite · Nmap · Nessus · Splunk · Wireshark · Kali Linux · Docker · O
 
 ## Live portfolio website
 
-[Open the deployed portfolio]( https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/ )
+[Open the deployed portfolio](https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/)
 
 ## Repository map
 

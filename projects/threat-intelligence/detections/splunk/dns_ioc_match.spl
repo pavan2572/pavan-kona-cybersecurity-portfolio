@@ -1,0 +1,6 @@
+index=lab sourcetype=synthetic_dns
+| lookup threat_iocs indicator AS query OUTPUT type confidence_band priority_score technique_ids tags
+| where type="domain"
+| stats count min(_time) as first_seen max(_time) as last_seen values(confidence_band) as confidence values(technique_ids) as attack_techniques values(tags) as tags by src_ip query priority_score
+| convert ctime(first_seen) ctime(last_seen)
+| sort - priority_score - count

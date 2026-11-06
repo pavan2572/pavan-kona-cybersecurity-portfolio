@@ -1,0 +1,22 @@
+name: Portfolio checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run unit tests
+        run: python -m unittest discover -s projects -p 'test_*.py' -v
+      - name: Build sample reports
+        run: |
+          python projects/vulnerability-management/src/vulntrack.py --nessus projects/vulnerability-management/data/sample_nessus.xml --nmap projects/vulnerability-management/data/sample_nmap.xml --assets projects/vulnerability-management/data/assets.csv --kev projects/vulnerability-management/data/kev_training_fixture.csv --out /tmp/vulntrack-report
+          python projects/threat-intelligence/src/threatintel.py --iocs projects/threat-intelligence/data/sample_iocs.csv --events projects/threat-intelligence/data/sample_events.jsonl --as-of 2026-11-06 --out /tmp/threatintel-report

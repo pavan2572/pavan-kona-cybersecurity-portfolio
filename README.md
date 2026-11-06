@@ -1,55 +1,72 @@
 # Pavan Kona | Cybersecurity Portfolio
 
-**Cybersecurity | API Security | Vulnerability Management | Threat Intelligence**
+**API Security · Vulnerability Management · Threat Intelligence**
 
-This repository contains reproducible security-lab projects, small defensive tools, detection content, test fixtures, and technical reports. The focus is on explaining the problem, showing the method, and making each artifact repeatable.
+A practical, reproducible cybersecurity portfolio. Each project contains source code, synthetic test data, documented methodology, and instructions to run the lab locally.
+
+> **Evidence and scope:** The API project includes a self-contained demonstration lab and test suite. The crAPI assessment is documented as prior hands-on work reported by the author; original screenshots and exact endpoint evidence are still to be added. The Vulnerability Management and Threat Intelligence projects are reproducible portfolio labs using deliberately synthetic fixtures. They demonstrate workflow and tooling, not production client engagements or real-world incidents.
 
 ## Featured projects
 
-| Project | What is included | Evidence boundary |
+| Project | What is included | Evidence type |
 |---|---|---|
-| [API Security — crAPI & Response Exposure Auditor](projects/crapi-api-security/README.md) | Local crAPI lab guide, JSON response allowlist auditor, tests, sample response and assessment report | The code and synthetic demo are reproducible. The earlier crAPI finding is described as prior hands-on work; original Burp evidence still needs to be added by the author. |
-| [Vulnerability Management Pipeline](projects/vulnerability-management/README.md) | Local-only Juice Shop target, Nmap XML parser, risk register, KEV prioritization field, tests and report template | Parser/risk logic and synthetic fixtures are included. A real scan must be run locally and its original output added. |
-| [Threat Intelligence & Detection Lab](projects/threat-intelligence/README.md) | IOC triage CLI, CISA KEV feed collector, Splunk detections, MITRE mapping and synthetic log data | Synthetic records are explicitly labelled. The KEV collector fetches current catalog data when run; no live threat attribution is claimed. |
+| [API Security Assessment](projects/api-security/) | Local vulnerable-versus-remediated API, response minimization tests, crAPI assessment methodology and Burp Suite exercise | Reproducible local lab + automated tests |
+| [Vulnerability Management](projects/vulnerability-management/) | Nmap/Nessus XML parsers, asset context, KEV override input, risk prioritization, CSV/Markdown reporting | Synthetic scan fixtures + test suite |
+| [Threat Intelligence](projects/threat-intelligence/) | IOC validation and normalization, confidence/freshness scoring, ATT&CK context, Splunk lookup export and SPL detections | Synthetic IOC/event fixtures + test suite |
+
+## Run the labs
+
+Requirements: Python 3.10 or newer. The projects use the Python standard library; no third-party packages are required.
+
+```bash
+# Run all automated checks
+python -m unittest discover -s projects -p 'test_*.py' -v
+
+# API security demonstration (terminal 1)
+python projects/api-security/lab/server.py
+# Terminal 2
+python projects/api-security/lab/demo_client.py
+
+# Vulnerability management report
+python projects/vulnerability-management/src/vulntrack.py \
+  --nessus projects/vulnerability-management/data/sample_nessus.xml \
+  --nmap projects/vulnerability-management/data/sample_nmap.xml \
+  --assets projects/vulnerability-management/data/assets.csv \
+  --kev projects/vulnerability-management/data/kev_training_fixture.csv \
+  --out projects/vulnerability-management/reports/generated
+
+# Threat intelligence enrichment report
+python projects/threat-intelligence/src/threatintel.py \
+  --iocs projects/threat-intelligence/data/sample_iocs.csv \
+  --events projects/threat-intelligence/data/sample_events.jsonl \
+  --as-of 2026-11-06 \
+  --out projects/threat-intelligence/reports/generated
+```
+
+See each project README for methodology, output interpretation, limitations, and safe-use boundaries.
 
 ## Technical toolkit
 
 Burp Suite · Nmap · Nessus · Splunk · Wireshark · Kali Linux · Docker · OWASP crAPI · DVWA · Python · SQL
 
-## Live portfolio website
-
-[Open the deployed portfolio](https://pavan2572.github.io/pavan-kona-cybersecurity-portfolio/)
-
-## Repository map
-
-- projects/crapi-api-security/ — API response exposure assessment and auditor.
-- projects/vulnerability-management/ — scanner-output processing and prioritization.
-- projects/threat-intelligence/ — IOC handling, KEV monitoring and detection engineering.
-- docs/ — methodology, evidence standards and portfolio guidance.
-- .github/workflows/ — automated Python tests.
-
-## Run the automated checks
-
-Requires Python 3.10 or later. The project scripts use the Python standard library; no pip packages are required.
-
-    python -m unittest discover -s projects/crapi-api-security/tests -v
-    python -m unittest discover -s projects/vulnerability-management/tests -v
-    python -m unittest discover -s projects/threat-intelligence/tests -v
-
-GitHub Actions runs the same tests on pushes and pull requests.
-
 ## About
 
-I am a Computer Science graduate with a Cybersecurity specialization (2025). My practical learning includes API security testing, vulnerability assessment, security monitoring, and threat intelligence. This portfolio is designed to show both the technical work and the reasoning behind it.
+Computer Science graduate with a Cybersecurity specialization (2025). Current learning focus: application/API security, vulnerability assessment, security operations, and threat intelligence.
+
+## Portfolio website
+
+The static portfolio site is [`index.html`](index.html). GitHub Pages workflow configuration is included in `.github/workflows/pages.yml`.
 
 ## Contact
 
-- GitHub: [pavan2572](https://github.com/pavan2572)
-- LinkedIn: add the professional profile URL when ready.
-- Email: intentionally omitted until a professional contact address is selected.
+- GitHub: [@pavan2572](https://github.com/pavan2572)
+- LinkedIn: add professional profile URL before public release
+- Email: add a professional contact address only if you choose to publish it
 
-## Responsible testing and evidence integrity
+## Responsible disclosure and safe use
 
-All targets in the supplied lab configurations are bound to localhost. Do not scan systems unless you have explicit authorization. Never commit credentials, access tokens, customer information, employer-confidential material, or unredacted personal data.
+All examples are intentionally local and use synthetic data. Only test systems you own or have explicit written authorization to assess. Do not upload customer information, credentials, access tokens, private indicators, or confidential employer material.
 
-Synthetic fixtures are labelled as synthetic. A sample report is not a claim that a real scan or investigation was performed. The repository distinguishes reusable tooling, demonstration data, prior hands-on work, and activity that still requires execution on the author's machine.
+---
+
+*Maintained as a learning portfolio. Status labels distinguish completed, reproducible lab work from prior self-reported activity and future work.*

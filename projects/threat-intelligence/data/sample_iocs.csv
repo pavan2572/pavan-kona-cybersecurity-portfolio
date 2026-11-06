@@ -1,0 +1,6 @@
+indicator,type,source,first_seen,last_seen,confidence,technique_id,tags
+203.0.113.44,ipv4,Synthetic-Training-Report,2026-10-30,2026-11-05,90,T1071.004,dns;beaconing
+cdn-update.example.test,domain,Synthetic-Training-Report,2026-11-01,2026-11-05,85,T1071.001,web;command-and-control
+203.0.113.44,ipv4,Analyst-Lab-Note,2026-11-02,2026-11-05,75,T1071.004,duplicate-observation
+https://drop.example.test/login, url, Synthetic-Training-Report,2026-10-20,2026-10-28,65,T1566.002,phishing
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,sha256,Synthetic-Training-Report,2026-11-02,2026-11-05,80,T1204.002,file;execution

@@ -1,0 +1,5 @@
+indicator,type,source_confidence,first_seen,last_seen,age_days,freshness_points,priority_score,confidence_band,sources,technique_ids,tags,observations
+203.0.113.44,ipv4,90,2026-10-30,2026-11-05,1,30,93,High,Analyst-Lab-Note;Synthetic-Training-Report,T1071.004,beaconing;dns;duplicate-observation,2
+cdn-update.example.test,domain,85,2026-11-01,2026-11-05,1,30,90,High,Synthetic-Training-Report,T1071.001,command-and-control;web,1
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,sha256,80,2026-11-02,2026-11-05,1,30,86,High,Synthetic-Training-Report,T1204.002,execution;file,1
+https://drop.example.test/login,url,65,2026-10-20,2026-10-28,9,20,66,Medium,Synthetic-Training-Report,T1566.002,phishing,1

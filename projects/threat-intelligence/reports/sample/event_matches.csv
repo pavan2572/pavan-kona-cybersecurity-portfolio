@@ -1,0 +1,5 @@
+timestamp,src_ip,dest_ip,query,user,action,matched_indicator,indicator_type,confidence_band,priority_score
+2026-11-06T09:15:00Z,198.51.100.10,203.0.113.44,,lab-user-a,connection_observed,203.0.113.44,ipv4,High,93
+2026-11-06T09:18:00Z,198.51.100.11,192.0.2.88,cdn-update.example.test,lab-user-b,dns_query,cdn-update.example.test,domain,High,90
+2026-11-06T09:25:00Z,198.51.100.13,192.0.2.60,,lab-user-d,blocked_by_lab_proxy,https://drop.example.test/login,url,Medium,66
+2026-11-06T09:30:00Z,198.51.100.14,192.0.2.61,,lab-user-e,file_hash_observed,ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,sha256,High,86

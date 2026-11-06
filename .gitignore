@@ -4,14 +4,4 @@ __pycache__/
 venv/
 .env
 .DS_Store
-Thumbs.db
-projects/vulnerability-management/scans/
-projects/vulnerability-management/reports/asset-inventory.csv
-projects/vulnerability-management/reports/asset-inventory.json
-projects/vulnerability-management/reports/nessus-normalized.csv
-projects/vulnerability-management/reports/risk-register.synthetic.csv
-projects/threat-intelligence/reports/ioc-triage.synthetic.csv
-projects/threat-intelligence/reports/kev-results.csv
-projects/threat-intelligence/reports/kev-latest.csv
-projects/threat-intelligence/reports/kev-since-date.csv
-projects/crapi-api-security/reports/demo-audit.json
+projects/*/reports/generated/

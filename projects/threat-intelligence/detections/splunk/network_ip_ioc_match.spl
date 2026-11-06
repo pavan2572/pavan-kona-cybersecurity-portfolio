@@ -1,0 +1,6 @@
+index=lab sourcetype=synthetic_network
+| lookup threat_iocs indicator AS dest_ip OUTPUT type confidence_band priority_score technique_ids tags
+| where type="ipv4"
+| stats count min(_time) as first_seen max(_time) as last_seen values(action) as actions values(confidence_band) as confidence values(technique_ids) as attack_techniques by src_ip dest_ip priority_score
+| convert ctime(first_seen) ctime(last_seen)
+| sort - priority_score - count

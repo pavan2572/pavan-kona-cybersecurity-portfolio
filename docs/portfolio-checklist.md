@@ -1,31 +1,24 @@
-# Portfolio Completion Checklist
+# Professional Portfolio QA Checklist
 
-## Profile
-- [ ] Add LinkedIn profile URL.
-- [ ] Add preferred professional email (only if comfortable publishing it).
-- [ ] Review the education and skills details for accuracy.
+## Published project quality
+- [x] Three project pages with objectives, methodology, setup, limitations, and references.
+- [x] API demonstration binds to loopback and uses synthetic data.
+- [x] Vulnerability-management parser includes Nmap/Nessus sample fixtures and an explainable priority model.
+- [x] Threat-intelligence pipeline includes IOC normalization, lookup export, SPL, and synthetic event validation.
+- [x] Unit tests and CI workflow included.
+- [x] Evidence classes and ethical scope documented.
 
-## crAPI API Security Assessment
-- [ ] Add the exact endpoint and request/response details from your own lab notes.
-- [ ] Add sanitized Burp Suite screenshots or a reproducible request/response example.
-- [ ] Confirm the affected object/property and authorization context.
-- [ ] Document validated impact, severity rationale, and remediation retest.
-- [ ] Remove tokens, cookies, personal data, and machine-specific secrets from evidence.
+## Personal profile additions
+- [ ] Add LinkedIn URL after review.
+- [ ] Add a professional email address only if you want it public.
+- [ ] Review education wording and contact links.
 
-## Vulnerability Management Lab
-- [ ] Build an isolated, authorized lab target.
-- [ ] Record asset inventory and scan scope.
-- [ ] Add scanner output and manually validated findings.
-- [ ] Prioritize using severity plus exposure and business context.
-- [ ] Document remediation and retest evidence.
+## Evidence that needs your original material
+- [ ] Add sanitized Burp screenshots/request-response evidence from your actual crAPI lab.
+- [ ] Replace or supplement synthetic Nessus/Nmap fixtures with a scan from your own authorized lab.
+- [ ] Add your own Splunk screenshots/search job results after importing the lookup and replaying the synthetic events.
 
-## Threat Intelligence Lab
-- [ ] Select a public threat report or dataset.
-- [ ] Record source, collection time, confidence, and IOC context.
-- [ ] Map relevant behavior to MITRE ATT&CK.
-- [ ] Create a safe, synthetic detection test and document results.
-
-## Publishing
-- [ ] Review every file for confidential or identifying data.
-- [ ] Enable GitHub Pages after checking the website locally.
-- [ ] Replace this checklist with completion evidence as work progresses.
+## Publication steps
+- [ ] Confirm GitHub Pages is enabled for the repository using the included Pages workflow.
+- [ ] Review the rendered website and mobile layout.
+- [ ] Re-run CI after any changes.

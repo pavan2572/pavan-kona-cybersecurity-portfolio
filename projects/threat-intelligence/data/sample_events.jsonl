@@ -1,0 +1,5 @@
+{"timestamp":"2026-11-06T09:15:00Z","src_ip":"198.51.100.10","dest_ip":"203.0.113.44","query":"","url":"","file_hash":"","user":"lab-user-a","action":"connection_observed"}
+{"timestamp":"2026-11-06T09:18:00Z","src_ip":"198.51.100.11","dest_ip":"192.0.2.88","query":"cdn-update.example.test","url":"","file_hash":"","user":"lab-user-b","action":"dns_query"}
+{"timestamp":"2026-11-06T09:20:00Z","src_ip":"198.51.100.12","dest_ip":"192.0.2.50","query":"portal.example.test","url":"https://portal.example.test/","file_hash":"","user":"lab-user-c","action":"allowed"}
+{"timestamp":"2026-11-06T09:25:00Z","src_ip":"198.51.100.13","dest_ip":"192.0.2.60","query":"","url":"https://drop.example.test/login","file_hash":"","user":"lab-user-d","action":"blocked_by_lab_proxy"}
+{"timestamp":"2026-11-06T09:30:00Z","src_ip":"198.51.100.14","dest_ip":"192.0.2.61","query":"","url":"","file_hash":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","user":"lab-user-e","action":"file_hash_observed"}

@@ -1,0 +1,5 @@
+indicator,type,source_confidence,confidence_band,priority_score,technique_ids,tags
+203.0.113.44,ipv4,90,High,93,T1071.004,beaconing;dns
+cdn-update.example.test,domain,85,High,90,T1071.001,command-and-control;web
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff,sha256,80,High,86,T1204.002,execution;file
+https://drop.example.test/login,url,65,Medium,66,T1566.002,phishing
